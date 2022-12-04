@@ -57,3 +57,11 @@ function toggleModal() {
   isModalOpen = true;
   document.body.classList += " modal--open";
 }
+
+$('projects a').on('click', function(event) {
+  var $anchor = $(this);
+  $('html, body').animate({
+    scrollTop: $($anchor.attr('href')).offset().top + "px"
+  }, 800);
+  event.preventDefault();
+});
